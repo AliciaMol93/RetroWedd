@@ -1,0 +1,50 @@
+<div class="relative max-w-2xl mx-auto mt-10">
+  <img class="w-200" src="/assets/images/playlist_recorte.png">
+  <div class="playlist-container max-w-2xl mx-auto text-center p-6 bg-[#004b6f] border-20 border-[#4fb8b9] rounded-xl shadow-lg">
+    <!-- Si la asistencia está confirmada mostrar la playlist y el formulario de sugerencias-->
+    @if(attendanceConfirmed) {
+      <iframe
+        style="border-radius: 12px"
+        src="https://open.spotify.com/embed/playlist/2AKSnq5o4ZGX4nqpQcG5x1?utm_source=generator"
+        width="100%"
+        height="380"
+        frameBorder="0"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy">
+      </iframe>
+
+      <!-- Formulario de sugerencia de canción -->
+      <form (ngSubmit)="submitSuggestion()" class="flex flex-col gap-2 mt-4">
+        <div class="playlist-container max-w-2xl mx-auto text-center">
+          <h2 class="text-2xl font-bold text-[#004b6f]  bg-white p-4 rounded-md inline-block mb-6 shadow-md">
+            ⬇ Propón tu temazo aquí ⬇
+          </h2>
+        </div>
+
+        <input [(ngModel)]="songInput.song_name" name="nombre_cancion" placeholder="Nombre de la canción" required class="border p-2 rounded text-white" />
+        <input [(ngModel)]="songInput.artist" name="artista" placeholder="Artista" required class="border p-2 rounded text-white" />
+        <button type="submit" class="bg-[#ff6a11] text-white px-4 py-2 rounded hover:bg-[#ef2d00] cursor-pointer ">Enviar</button>
+      </form>
+      <div class="mt-4 text- font-semibold text-[#ff6a11]">
+        @if(message){
+          {{message}}
+        }</div>
+
+     <!-- Si no ha confirmado enlace hacia el formulario de rsvp para confirmar asistencia -->
+    } @else {
+      <div class="noConfirmado p-6 mt-6 bg-orange-50 border-2 border-dashed border-orange-500
+       text-orange-700 rounded-lg">
+        <div class="icon text-3xl mb-4">
+          😞
+        </div>
+        <p class="text-lg">
+          Sólo los invitados que hayan confirmado su asistencia pueden acceder a la playlist 💌
+        </p>
+        <p>
+          <a [routerLink]="['/rsvp']" [queryParams]="{from: 'playlist'}" class="text-amber underline">
+            ¡Confirma tu asistencia aquí!</a>
+        </p>
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,32 @@
+@keyframes pacman-move {
+  0% { top: 0; }
+  100% { top: 100%; }
+}
+
+.animate-pacman {
+  animation: pacman-move 20s linear infinite;
+}
+
+/*Móviles */
+@media (max-width: 767px) {
+  .animate-pacman {
+    left: 1rem !important;
+    transform: none !important;
+    animation: pacman-move-mobile 50s linear infinite;
+  }
+
+  @keyframes pacman-move-mobile {
+    0% { top: 0; }
+    100% { top: 100%; }
+  }
+}
+
+@media (max-width: 767px) {
+  .timeline {
+    margin-left: 1.85rem !important;
+  }
+
+  .timeline::before {
+    left: 1rem !important;
+  }
+}

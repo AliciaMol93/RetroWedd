@@ -1,0 +1,35 @@
+.gif-wall {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 10px;
+  gap: 15px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.left-wall {
+  left: 0;
+}
+
+.right-wall {
+  right: 0;
+}
+
+.gif-wall img {
+  width: 80px;
+  height: auto;
+  object-fit: contain;
+  transform: rotate(calc(-10deg + 20deg * random()));
+  opacity: 0.9;
+  animation: floaty 5s ease-in-out infinite alternate;
+}
+
+@keyframes floaty {
+  from { transform: translateY(0) rotate(-5deg); }
+  to { transform: translateY(10px) rotate(5deg); }
+}

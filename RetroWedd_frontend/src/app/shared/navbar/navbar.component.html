@@ -1,0 +1,44 @@
+<div class="navbar w-full bg-gray-900 shadow-lg p-4 border-b-4 border-gray-500 fixed top-0 left-0 z-50 flex items-center justify-between">
+
+  <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-40 h-4 bg-black rounded-b-lg"></div>
+  <!-- Logo estilo retro -->
+  <div class="text-white font-bold text-3xl tracking-wide">
+    <a href="/" class="cursor-pointer">
+      <span class="bg-gradient-to-r from-red-500 to-yellow-500 text-transparent bg-clip-text">RetroWedd</span>
+    </a>
+  </div>
+  <!-- Menú en pantallas grandes -->
+  <div class="hidden lg:flex">
+    <ul class="menu menu-horizontal px-4 text-white text-lg gap-6">
+      <li><a href="/home" class="hover:text-yellow-400">Inicio</a></li>
+      <li><a href="/aboutus" class="hover:text-yellow-400">Nosotros</a></li>
+      <li><a href="/itinerary" class="hover:text-yellow-400">Itinerario</a></li>
+      <li><a href="/location" class="hover:text-yellow-400">Localización</a></li>
+      <li><a href="/playlist" class="hover:text-yellow-400">Playlist</a></li>
+    </ul>
+  </div>
+
+  <!-- Menú  móvil -->
+  <div class="lg:hidden">
+    <div class="dropdown">
+      <button tabindex="0" class="btn btn-ghost text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+        </svg>
+      </button>
+      <ul tabindex="0" class="menu menu-sm dropdown-content bg-gray-800 rounded-box z-10 mt-2 w-52 p-2 shadow-lg text-yellow-400">
+        <li><a href="/home">Inicio</a></li>
+        <li><a href="/aboutus">Nosotros</a></li>
+        <li><a href="/itinerary">Itinerario</a></li>
+        <li><a href="/location">Localización</a></li>
+        <li><a href="/playlist">Playlist</a></li>
+        <li><a href="/rsvp">RSVP</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Botón RSVP -->
+  <div>
+    <a href="/rsvp" class="btn btn-primary bg-red-600 hover:bg-red-700 text-white font-bold px-6 py-2 rounded-lg border-2 border-yellow-400 shadow-lg">RSVP</a>
+  </div>
+</div>

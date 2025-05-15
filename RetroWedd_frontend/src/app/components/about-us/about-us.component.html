@@ -1,0 +1,173 @@
+
+<body
+  class="bg-[url('/assets/textures/projection-noise.jpg')] bg-cover bg-fixed bg-center "
+>
+  <section
+    class="flex flex-col items-center justify-center px-6 py-20 text-center"
+  >
+    <div class="mt-15 fixed top-0 left-0 w-full h-full z-0 pointer-events-none">
+      <!-- FILA SUPERIOR -->
+      <img
+        src="https://media.giphy.com/media/l1J9CteX3i48gWDSw/giphy.gif"
+        class="absolute top-[5%] left-[5%] w-[18%] opacity-15"
+      />
+      <img
+        src="https://media.giphy.com/media/gHcPh3ehbRGik/giphy.gif"
+        class="absolute top-[5%] left-[20%] w-[18%] opacity-15"
+      />
+      <img
+        src="https://media.giphy.com/media/K4ppHUZTYKJYk/giphy.gif"
+        class="absolute top-[5%] left-[55%] w-[18%] opacity-15"
+      />
+      <img
+        src="https://media.giphy.com/media/cnSWVufZ9AXmgCoYMz/giphy.gif"
+        class="absolute top-[5%] left-[80%] w-[18%] opacity-15"
+      />
+
+      <!-- FILA MEDIO-ALTA -->
+      <img
+        src="https://media.giphy.com/media/406XmAQsBhEEpRKwFt/giphy.gif"
+        class="absolute top-[25%] left-[10%] w-[17%] opacity-14"
+      />
+      <img
+        src="https://media.giphy.com/media/lSgdEyAeAbExW/giphy.gif"
+        class="absolute top-[25%] left-[35%] w-[18%] opacity-14"
+      />
+      <img
+        src="https://media.giphy.com/media/31liAeCE1humI/giphy.gif"
+        class="absolute top-[25%] left-[60%] w-[20%] opacity-15"
+      />
+      <img
+        src="https://media.giphy.com/media/26Ffhespo1GwMiEc8/giphy.gif"
+        class="absolute top-[25%] left-[85%] w-[15%] opacity-13"
+      />
+
+      <!-- FILA CENTRAL -->
+      <img
+        src="https://media.giphy.com/media/MMnDgPw0yB6ms/giphy.gif"
+        class="absolute top-[45%] left-[10%] w-[20%] opacity-15"
+      />
+      <img
+        src="https://media.giphy.com/media/3oKGzzv8fjcLzXAEXC/giphy.gif"
+        class="absolute top-[45%] left-[35%] w-[20%] opacity-14"
+      />
+      <img
+        src="https://media.giphy.com/media/UtkJymPFT6LyE/giphy.gif"
+        class="absolute top-[45%] left-[60%] w-[20%] opacity-14"
+      />
+      <img
+        src="https://media.giphy.com/media/q22e4mDR713La/giphy.gif"
+        class="absolute top-[45%] left-[85%] w-[20%] opacity-14"
+      />
+
+      <!-- FILA INFERIOR -->
+      <img
+        src="https://media.giphy.com/media/HZpCCbcWc0a3u/giphy.gif"
+        class="absolute top-[65%] left-[5%] w-[17%] opacity-15"
+      />
+      <img
+        src="https://media.giphy.com/media/SxMMNyNTMGw2uwqSNl/giphy.gif"
+        class="absolute top-[65%] left-[30%] w-[18%] opacity-14"
+      />
+      <img
+        src="https://media.giphy.com/media/10A9fGbf7E3eBa/giphy.gif"
+        class="absolute top-[65%] left-[55%] w-[15%] opacity-13"
+      />
+      <img
+        src="https://media.giphy.com/media/4LTGEdPueINFzycY1Ixq/giphy.gif"
+        class="absolute top-[65%] left-[80%] w-[17%] opacity-14"
+      />
+
+      <!-- FILA ABAJO-DEL-TODO -->
+      <img
+        src="https://media.giphy.com/media/q3uDB1eaA2jEk/giphy.gif"
+        class="absolute top-[85%] left-[10%] w-[20%] opacity-12"
+      />
+      <img
+        src="https://media.giphy.com/media/5xaOcLKOuFcRVrKCSJO/giphy.gif"
+        class="absolute top-[85%] left-[30%] w-[18%] opacity-13"
+      />
+      <img
+        src="https://media.giphy.com/media/vArNfZSyp8v6/giphy.gif"
+        class="absolute top-[85%] left-[50%] w-[15%] opacity-14"
+      />
+      <img
+        src="https://media.giphy.com/media/YVe7IfmGZVmEM/giphy.gif"
+        class="absolute top-[85%] left-[70%] w-[18%] opacity-14"
+      />
+      <img
+        src="https://media.giphy.com/media/Fm2nuxTGfKa1q/giphy.gif"
+        class="absolute top-[85%] left-[90%] w-[18%] opacity-14"
+      />
+    </div>
+    <div
+      class="relative w-[24rem] h-[34rem] bg-black rounded-xl border-[6px] border-[#444] shadow-2xl overflow-visible"
+    >
+      <!-- Fiso arriba izquierda -->
+      <img
+        class="absolute -top-7 -left-10 w-24 rotate-[-4deg] z-40"
+        src="/assets/images/pngwing.com.png"
+        alt="fiso"
+      />
+
+      <!-- Fiso arriba derecha -->
+      <img
+        class="absolute -top-6 -right-6 w-24 rotate-[-70deg] z-40"
+        src="/assets/images/pngwing.com.png"
+        alt="fiso"
+      />
+
+      <!-- Imagen actual -->
+      <div class="w-full h-full relative">
+        @for (photo of photos; let i = $index; track photo.src) {
+        <div
+          class="absolute top-0 left-0 w-full h-full transition-opacity duration-500 ease-in-out"
+          [ngClass]="{
+            'opacity-100 z-10': i === currentIndex,
+            'opacity-0 z-0': i !== currentIndex
+          }"
+        >
+          <img
+            [src]="photo.src"
+            class="w-full h-full object-cover grayscale-[25%] contrast-125 brightness-90 saturate-50"
+          />
+          <div
+            class="absolute inset-0 pointer-events-none bg-[url('/assets/textures/grain.png')] bg-cover opacity-10 mix-blend-soft-light"
+          ></div>
+        </div>
+        }
+      </div>
+
+      <!-- Botón-->
+      <button class="absolute top-1/2 right-1.5 -translate-y-1/2 z-40 cursor-pointer bg-yellow-200/80 text-black text-xl font-bold px-3 py-1 rounded-full shadow-md hover:bg-yellow-300 transition-all animate-pulse md:animate-bounce"
+        (click)="nextPhoto()"
+      >
+        →
+      </button>
+
+      <!-- Etiqueta Kodak -->
+      <div
+        class="absolute bottom-2 left-3 text-yellow-400 text-xs font-mono opacity-70 z-30"
+      >
+        Kodak · Ektachrome 100
+      </div>
+    </div>
+
+    <div
+    class="relative "
+  >
+    <!-- logo superPop -->
+    <img
+      class="absolute -top-4 -left-10 w-30 -rotate-20 z-40"
+      src="/assets/images/superPop.png"
+      alt="superpop"/>
+
+      <!-- Texto "Nuestra historia" -->
+    <div class="bg-[#f9f4e8] mt-10 p-6 rounded-xl shadow-inner border border-yellow-300 w-full max-w-lg font-retro text-gray-800 leading-relaxed text-left"
+    >
+      <h3 class="text-2xl font-bold mb-4">Nuestra historia</h3>
+      <div [innerHTML]="formatText(photos[currentIndex]?.text)"></div>
+    </div>
+    </div>
+  </section>
+</body>

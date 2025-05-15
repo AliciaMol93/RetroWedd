@@ -1,0 +1,22 @@
+
+  @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+  .font-retro {
+    font-family: "Press Start 2P", cursive;
+  }
+
+  .neon-text {
+    text-shadow: 0px 0px 8px #ff00ff, 0px 0px 12px #ff00ff, 0px 0px 20px #ff00ff;
+  }
+
+  .active-link {
+    color: #ffcc00; /* Cambia el color cuando el enlace es activo */
+    text-shadow: 0px 0px 8px #ffcc00, 0px 0px 12px #ffcc00;
+    transition: all 0.3s ease;
+  }
+
+  
+  #mobileMenu a {
+    transition: all 0.3s ease;
+  }
+

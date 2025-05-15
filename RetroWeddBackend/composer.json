@@ -1,0 +1,9 @@
+{
+  "name": "retrowedd/retrowedd-backend",
+  "require-dev": {
+    "phpunit/phpunit": "^10.5"
+  },
+  "scripts": {
+    "test": "phpunit"
+  }
+}

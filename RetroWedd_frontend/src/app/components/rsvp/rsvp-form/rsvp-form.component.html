@@ -1,0 +1,169 @@
+<form
+  autocomplete="off"
+  [formGroup]="myForm"
+  (ngSubmit)="onSave()"
+  class="w-full max-w-4xl mx-auto mt-20 bg-black p-8 rounded-2xl shadow-xl border-2 border-yellow-400"
+>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- Nombre -->
+    <div>
+      <label class="block text-lg font-semibold text-yellow-300 mb-1"
+        >Nombre:</label
+      >
+      <input
+        type="text"
+        formControlName="name"
+        class="w-full p-3 rounded-lg bg-gray-900 text-green-400 border
+         border-yellow-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+      />
+      @if (formUtils.isValidField(myForm,'name')) {
+      <span class="text-red-500 text-sm">{{
+        formUtils.getFieldError(myForm, "name")
+      }}</span>
+      }
+    </div>
+
+    <!-- Apellidos -->
+    <div>
+      <label class="block text-lg font-semibold text-yellow-300 mb-1"
+        >Apellidos:</label
+      >
+      <input
+        type="text"
+        formControlName="apellidos"
+        class="w-full p-3 rounded-lg bg-gray-900 text-green-400 border border-yellow-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+      />
+      @if (formUtils.isValidField(myForm,'apellidos')) {
+      <span class="text-red-500 text-sm">{{
+        formUtils.getFieldError(myForm, "apellidos")
+      }}</span>
+      }
+    </div>
+
+    <!-- Email -->
+    <div class="md:col-span-2">
+      <label class="block text-lg font-semibold text-yellow-300 mb-1"
+        >Correo Electrónico:</label
+      >
+      <input
+        type="email"
+        formControlName="email"
+        class="w-full p-3 rounded-lg bg-gray-900 text-green-400 border border-yellow-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+      />
+      @if (formUtils.isValidField(myForm,'email')) {
+      <span class="text-red-500 text-sm">{{
+        formUtils.getFieldError(myForm, "email")
+      }}</span>
+      }
+    </div>
+
+    <!-- Asistencia -->
+    <div>
+      <label class="block text-lg font-semibold text-yellow-300 mb-1"
+        >¿Asistirás a la boda?</label
+      >
+      <select
+        formControlName="asistencia"
+        class="w-full px-3 py-2 rounded-lg bg-gray-900 text-green-400 border border-yellow-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+      >
+        <option [ngValue]="null" disabled>Selecciona una opción</option>
+        <option [ngValue]="true">Sí, asistiré</option>
+        <option [ngValue]="false">No, no podré asistir</option>
+      </select>
+    </div>
+
+    <!-- Transporte -->
+    <div class="flex items-center space-x-3">
+      <input
+        type="checkbox"
+        formControlName="transporte"
+        class="w-6 h-6 rounded border border-yellow-300 bg-gray-900 text-green-400 focus:ring-2 focus:ring-yellow-400"
+      />
+      <label class="text-lg font-semibold text-yellow-300"
+        >¿Necesitas transporte?</label
+      >
+    </div>
+
+    <!-- Número de niños -->
+    <div class="flex flex-col">
+      <div class="flex items-center gap-3">
+        <label class="text-lg font-semibold text-yellow-300"
+          >Número de niños:</label
+        >
+        <input
+          type="number"
+          formControlName="num_ninos"
+          min="0"
+          max="3"
+          class="w-20 p-2 rounded-lg bg-gray-900 text-green-400 border border-yellow-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+        />
+      </div>
+      @if (formUtils.isValidField(myForm,'num_ninos')) {
+      <span class="text-red-500 text-sm mt-1">{{formUtils.getFieldError(myForm, "num_ninos")}}</span>}
+    </div>
+
+    <!-- Menú -->
+    <div class="md:col-span-2">
+      <label class="block text-lg font-semibold text-yellow-300 mb-1"
+        >Elige tu menú:</label
+      >
+      <select
+        formControlName="menus"
+        class="w-full px-3 py-2 rounded-lg bg-gray-900 text-green-400 border border-yellow-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+      >
+        @for (menu of menuOptions; track menu) {
+        <option [value]="menu">{{ menu }}</option>
+        }
+      </select>
+      @if (formUtils.isValidField(myForm,'menus')) {
+        <span class="text-red-500 text-sm mt-1">{{formUtils.getFieldError(myForm, "menus")}}</span>}
+    </div>
+
+    <!-- Alergias -->
+    <div class="md:col-span-2" [formGroup]="alergenosFormGroup">
+      <label class="block text-lg font-semibold text-yellow-300 mb-2"
+        >¿Tienes alguna alergia?</label
+      >
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+        @for (alergeno of alergenoOptions; track alergeno.value) {
+        <div class="flex items-center space-x-2 text-green-400">
+          <input
+            type="checkbox"
+            [formControlName]="alergeno.value"
+            class="w-5 h-5 rounded border-yellow-300 bg-gray-900"
+          />
+          <label>{{ alergeno.name }}</label>
+        </div>
+        }
+      </div>
+    </div>
+
+    <!-- Campo de alergias libre -->
+    <div class="md:col-span-2">
+      <label class="block text-yellow-300 font-semibold mb-1"
+        >¿Alguna otra alergia?</label
+      >
+      <textarea
+        formControlName="otrosAlergenos"
+        class="w-full px-3 py-2 min-h-[80px] border-2 border-yellow-300 bg-black text-green-400 rounded-lg shadow-lg outline-none focus:ring-4 focus:ring-yellow-300"
+        placeholder="Especifica cualquier alergia adicional..."
+      ></textarea>
+    </div>
+  </div>
+
+  <!-- Botón -->
+  <button
+    type="submit"
+    class="cursor-pointer w-full py-3 mt-6 bg-yellow-400 text-black text-lg font-bold rounded-lg hover:bg-yellow-500 transition duration-300"
+  >
+    🎉 Confirmar Asistencia
+  </button>
+
+  @if(mensaje){
+  <div
+    class="bg-green-200 text-green-800 p-4 rounded-lg mt-4 text-center font-semibold fixed inset-x-0 bottom-10 z-50"
+  >
+   {{mensaje}}
+  </div>
+  }
+</form>

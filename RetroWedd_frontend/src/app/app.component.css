@@ -1,0 +1,16 @@
+html {
+  scroll-behavior: smooth;
+}
+/* Fuentes */
+@font-face {
+  font-family: 'cassette';
+  src: url('/assets/fonts/Alphabetized Cassette Tapes.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'hellovintage';
+  src: url('/assets/fonts/Hello Vintage.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'stolencassette';
+  src: url('/assets/fonts/Stolen Cassette.ttf') format('truetype');
+}

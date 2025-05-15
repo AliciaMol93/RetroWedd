@@ -1,0 +1,13 @@
+@import "tailwindcss";
+@plugin "daisyui";
+.retro-font {
+  font-family: 'Press Start 2P', monospace;
+}
+
+.retro-elegant {
+  font-family: 'Major Mono Display', monospace;
+}
+.font-retro {
+  font-family: 'Archivo Black', serif;
+}
+

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpdoc>
+  <title>RetroWedd Backend</title>
+
+  <project>
+    <name>retrowedd/retrowedd-backend</name>
+  </project>
+
+  <paths>
+    <output>docs</output>
+    <directory>.</directory>
+    <ignore>vendor</ignore>
+  </paths>
+
+  <parser>
+    <target>docs</target>
+  </parser>
+
+  <transformer>
+    <target>docs</target>
+  </transformer>
+</phpdoc>

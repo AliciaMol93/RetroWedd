@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit  
+    bootstrap="tests/bootstrap.php"
+         colors="true"
+         verbose="true">
+    <testsuites>
+        <testsuite name="RetroWeddBackend Tests">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+    <php>
+        <env name="DB_HOST" value="localhost"/>
+        <env name="DB_USER" value="RetroWedd"/>
+        <env name="DB_PASS" value="RetroWedding123"/>
+        <env name="DB_NAME" value="RetroWedd"/>
+    </php>
+</phpunit> 
